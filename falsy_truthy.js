@@ -1,0 +1,1 @@
+//this involves checking javascript statements that will result to true or false
