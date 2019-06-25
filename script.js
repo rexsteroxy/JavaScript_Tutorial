@@ -194,6 +194,7 @@ function calculate(){
         });
     });
 //listening to calculate button for its function
+ //https://www.linkedin.com/learning/programming-foundations-apis-and-web-services/what-you-should-know
     calculateButton.addEventListener('click', ()=>{
         calculate();
     });
