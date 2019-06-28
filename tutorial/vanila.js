@@ -102,6 +102,26 @@ submit
                 
                 
             } 
+
+//validating unit input using calculate button
+calculatebtn.disabled = true;
+let unitvalue = [];
+for(let v=0; v<=loopNumber; v++){
+
+    unitvalue[v]= document.getElementById(`unit${v}`);
+    console.log(unitvalue[v]); 
+    unitvalue[v].addEventListener('keyup',()=>{
+        if(unitvalue[v].value === ''){
+            calculatebtn.focus();
+            calculatebtn.disabled = true;
+        }else{
+            calculatebtn.disabled = false;
+        }
+    
+    });   
+}
+
+
             
         });*/
     // })();

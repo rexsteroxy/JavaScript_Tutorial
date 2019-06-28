@@ -2,7 +2,11 @@
 (function(){
 //using strict mode
 'use strict';
+
+
+
 let form = document.getElementById('form');
+let mainCard = document.getElementById('main');
 document.addEventListener('DOMContentLoaded', ()=>{
 //changing the background color with the mousemoves
     let mousemove = document.querySelector('#main');
@@ -14,9 +18,9 @@ function movemouse(e){
 let button = document.getElementById('button');
     let loopinput = document.getElementById('loopNumber');
     button.disabled = true;
-    loopinput.addEventListener('change',()=>{
+    loopinput.addEventListener('keyup',()=>{
         if(loopinput.value === ''){
-            alert('Please fill the first textbox');
+            // alert('Please fill the first textbox');
             button.focus();
            button.disabled = true;
         }else{
@@ -24,19 +28,6 @@ let button = document.getElementById('button');
         }
     
     });
-
-//function for creating the reset button
-function CreateReset(){
-    let reset=  document.createElement('button');
-    reset.className ="btn btn-success";
-    reset.id="reset";
-    reset.appendChild(document.createTextNode('Reset'));
-    form.appendChild(reset);
-
-}
-
-
-
 button.addEventListener('click',buttonClick);
 //function for creating the input and calculate button
 function buttonClick(e){
@@ -62,6 +53,7 @@ let title = document.querySelector('.title');
         }
     unitInput.setAttribute ('required' , 'yes');
     unitInput.setAttribute('placeholder' , 'Enter CourseUnit');
+    unitInput.setAttribute('type' , 'number');
     div.appendChild(gradeInput);
     div.appendChild(unitInput);
     }
@@ -75,23 +67,11 @@ let title = document.querySelector('.title');
     calculate.appendChild(document.createTextNode('Calculate'));
     form.appendChild(calculate);
        
-    //
-    CreateReset();
+    
 
 let calculatebtn = document.getElementById('calculate');
+//console.log(calculatebtn);
 
-calculatebtn.disabled = true;
-let unitvalue= document.getElementById(`unit0`);
-            
-    unitvalue.addEventListener('change',()=>{
-        if(unitvalue.value === ''){
-            calculatebtn.focus();
-            calculatebtn.disabled = true;
-        }else{
-            calculatebtn.disabled = false;
-        }
-    
-    });
     calculatebtn.addEventListener('click',gpCal);
 function gpCal(e){
         e.preventDefault();
@@ -133,7 +113,7 @@ function gpCal(e){
             gp = gp + tg;
             break;
             case 'F':
-            grade[i]=0;
+             grade[i]=0;
            tg =grade[i] * unit_array[i];
             gp = gp + tg;
             break;
@@ -148,14 +128,60 @@ function gpCal(e){
         
         mgp = Math.round(gp / total_courseunit * 100) / 100;
         let display = document.getElementById("header-title");
-        display.innerHTML = `Your GP Calculation IS ${mgp}`;
-        alert(`Your GP Calculation IS ${mgp}`);
+        if(mgp){
+            display.innerHTML = `Your GP Calculation IS ${mgp}`;
+        }else if(mgp == 0){
+           display.innerHTML = `Your GP Calculation IS ${mgp}`;
         }
-  let resetbtn = document.getElementById('reset');
-  resetbtn.addEventListener('click',()=>{
+        else{
+            display.innerHTML = `Invalid Calculation`;
+         }
+       
 
-    
-  });           
+        
+        
+
+    //creating the display output
+    let resultDisplay = document.getElementById('resultDisplay');;
+    resultDisplay.innerHTML = `Your GP Calculation IS ${mgp}`;
+
+ if(mgp >= 4.5){
+    resultDisplay.style.color = '#ffffff' ;
+    resultDisplay.style.backgroundColor = '#00ff00' ;
+    }else if(mgp >= 3.5 && mgp < 4.5){
+        resultDisplay.style.color = '#ffffff' ;
+        resultDisplay.style.backgroundColor = '#001200' ;
+    }
+    else if(mgp >= 3 && mgp < 3.5){
+        resultDisplay.style.color = '#ffffff' ;
+        resultDisplay.style.backgroundColor = '#f19000';
+    }else if(mgp >= 2 && mgp < 3){
+        resultDisplay.style.color = '#ffffff' ;
+        resultDisplay.style.backgroundColor = '#e15000' ;
+    }else if(mgp >= 0 && mgp < 2){
+        resultDisplay.style.color = '#ffffff' ;
+        resultDisplay.style.backgroundColor = '#ff0000';
+    }else{
+        resultDisplay.style.color = '#ffffff' ;
+        resultDisplay.style.backgroundColor = '#ff0000';
+        resultDisplay.innerHTML = `Please enter course unit`;
+    }
+
+    mainCard.appendChild(resultDisplay);
+    resultDisplay.style.display = 'initial';
+
+    let resetbtn = document.getElementById('reset');
+    let divReset =  document.getElementById('div');
+        divReset.className = "form-group";
+    mainCard.appendChild(divReset);
+    divReset.appendChild(resetbtn);
+    resetbtn.style.display = 'initial';
+    resetbtn.addEventListener('click',()=>{
+        
+    });      
+}
+
+       
 }                          
 });
 })();
