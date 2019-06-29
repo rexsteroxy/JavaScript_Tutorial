@@ -2,9 +2,6 @@
 (function(){
 //using strict mode
 'use strict';
-
-
-
 let form = document.getElementById('form');
 let mainCard = document.getElementById('main');
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -67,8 +64,6 @@ let title = document.querySelector('.title');
     calculate.appendChild(document.createTextNode('Calculate'));
     form.appendChild(calculate);
        
-    
-
 let calculatebtn = document.getElementById('calculate');
 //console.log(calculatebtn);
 
@@ -125,7 +120,6 @@ function gpCal(e){
         }
         
         }
-        
         mgp = Math.round(gp / total_courseunit * 100) / 100;
         let display = document.getElementById("header-title");
         if(mgp){
@@ -136,11 +130,6 @@ function gpCal(e){
         else{
             display.innerHTML = `Invalid Calculation`;
          }
-       
-
-        
-        
-
     //creating the display output
     let resultDisplay = document.getElementById('resultDisplay');;
     resultDisplay.innerHTML = `Your GP Calculation IS ${mgp}`;
@@ -169,7 +158,6 @@ function gpCal(e){
 
     mainCard.appendChild(resultDisplay);
     resultDisplay.style.display = 'initial';
-
     let resetbtn = document.getElementById('reset');
     let divReset =  document.getElementById('div');
         divReset.className = "form-group";
@@ -177,8 +165,7 @@ function gpCal(e){
     divReset.appendChild(resetbtn);
     resetbtn.style.display = 'initial';
     resetbtn.addEventListener('click',()=>{
-        
-    });      
+        });      
 }
 
        
