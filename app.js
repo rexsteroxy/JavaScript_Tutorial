@@ -165,6 +165,7 @@ function gpCal(e){
     divReset.appendChild(resetbtn);
     resetbtn.style.display = 'initial';
     resetbtn.addEventListener('click',()=>{
+        location.reload();
         });      
 }
 
