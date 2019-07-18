@@ -3,56 +3,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
-    <style>
-        #hour{
-            margin: 40px;
-            border: 20px;
-            padding: 0px;
-            width: auto;
-            height: 90px;
-            text-align: center;
-           
-        }
-    </style>
+    <title>Gp Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
 </head>
-
 <body>
-    <h1 id='head'><center>JAVASCRIPT CALCULATOR APP</center> </h1><br><br>
-    <div id="hour">
-        <div id="time"></div>
-    </div>
-    <div id="resultDiv"></div>
-        
-        <input type="text"  id="num1" placeholder="input firstnumber">
-        <select name="" id="operator">
-                <option value="+">+</option>
-                <option value="-">-</option>
-                <option value="/">/</option>
-                <option value="*">*</option>
-                <option value="%">%</option>
-            </select>
-           
-        <input type="text" id="num2" placeholder="Input secondnumber">
-        
-        <button id="button">Calculate</button>
-        <button id="zoomup">Zoom(+)</button>
-        <button id="zoomdown">Zoom(-)</button>
-        <button id="reset">Reset</button>
+    <header id="main-header" class="bg-success text-white p-4 mb-3">
+        <div class="container">
+            <h1 id="header-title">Js Grade Calculator</h1>
+        </div>
+    </header>
+        <div class="container">
+                <div class="col-lg-5 mx-auto">
+            <div id="main" class="card card-body">
+                    <h2 class="title">Number Of Courses</h2>
+                    <form action="" id='form' class="contact-form">
+                        <input type="number" id="loopNumber" class="form-control mb-2"
+                            placeholder="Enter number of courses">
+                        <button  id="button" class="btn btn-dark">Enter</button>
+                        <div class="card card-body" id="resultDisplay" style="display: none;"></div>
+                        <div class="form-group" id="div">
+                        <button  id="reset" class="btn btn-success" style="display: none;">Reset</button>
+                        </div>
+                        
+                    </form>
 
-
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.395451649779!2d7.039879014420108!3d5.508165135661283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104259c93f71cf8b%3A0x5ffa7978fe1a6aa6!2sImo+State+University%2C+Owerri.!5e0!3m2!1sen!2sng!4v1560124456473!5m2!1sen!2sng" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-
-
-        <script type="text/javascript" src="script.js"></script>
-        
-        <!-- <script>
-            function emit(){
-                alert('Hello World Rexsteroxy has started');
-                console.log('Rex is greeting the console as weel');
-            }
-        </script> -->
+            </div>
+            
+        </div> 
+        </div> 
+    
+    
+    
+    
+        <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
