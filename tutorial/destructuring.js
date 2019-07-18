@@ -1,6 +1,6 @@
 let a , b, c, d;
 
-let name = ['osondu','miracle','chioma','mirah'];
+let name = ['Amadi','Austin','chukwuemeka','Rexsteroxy'];
 
 [a, b, c, d] =name;
 
@@ -19,3 +19,4 @@ let year, model;
 })
 console.log(year);
 console.log(model);
+providing the talent and the technology to power high-performing teams.  
