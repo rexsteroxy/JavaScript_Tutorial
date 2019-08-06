@@ -33,9 +33,12 @@
         </div> 
         </div> 
     
+    <!-- https://github.com/nazrulwazir/Parcel-Tracking-System
+    parcel tracking laravel github
+
+    https://github.com/ARCANEDEV/LaravelTracker -->
     
-    
-    
-        <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+        
 </body>
 </html>
